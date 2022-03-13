@@ -7,7 +7,7 @@ var currentTime = moment();
 currentTime = currentTime.startOf("hour");
 
 //start day at 9
-var startOfDay = moment().startOf('day').add(9, "hours");
+var startOfDay = moment().startOf('day').add(8, "hours");
 
 //first hour
 var time1 = startOfDay.add(0, "h");
@@ -196,14 +196,13 @@ for (var i = 0; i < storageArray.length; i++) {
 //event listener
 $(".saveBtn").click(function (event) {
     event.preventDefault();
-    var formValue = $(this).siblings(".form-control").val();
+    var taskValue = $(this).siblings(".form-control").val();
     console.log("This worked");
-    var listItem = $(this).parent().data("hour");
+    var hourValue = $(this).parent().data("hour");
 
-    localStorage.setItem(listItem, formValue);
+    localStorage.setItem(hourValue, taskValue);
 
 })
-
 
 
 whatsTheTime();
